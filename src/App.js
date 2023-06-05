@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./Components/Navbar";
+import Loader from "./Components/Loader";
+import Clients from "./Components/Clients";
+import { useState } from "react";
+import Footer from "./Components/Footer";
+import "./App.css";
 
 function App() {
+  const [result, setResult] = useState();
+  const [loading, setLoading] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar setResult={setResult} setLoading={setLoading} />
+      {loading ? <Loader /> : ""}
+      <Clients
+        result={result}
+        loading={loading}
+        setResult={setResult}
+        setLoading={setLoading}
+      />
+      <Footer />
     </div>
   );
 }
