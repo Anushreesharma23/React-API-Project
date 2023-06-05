@@ -8,7 +8,7 @@ function Footer() {
     >
       <div className="container-fluid">
         <a className="navbar-brand">
-          Created By Anushree Sharma | All rights reserved
+          React-App made with fetch API method
         </a>
       </div>
     </nav>
